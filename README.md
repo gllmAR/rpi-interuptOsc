@@ -36,7 +36,7 @@ cd rpi-interuptOsc
 ### Usage
 Run from terminal
 
-`python interuptOsc.py`
+`sudo python interuptOsc.py`
 
 You should see the default parameters :
 ```
@@ -50,6 +50,14 @@ bouncetime: 200
 resistance: GPIO.PUD_DOWN
 trigger: GPIO.FALLING
 Debug: 1
+```
+
+these parameters correspond to this line :
+
+```
+sudo python interuptOsc.py -g 0 -i 23 -d 127.0.0.1 -p 9999 -o /gpioOSC -b 200 -r 2 -t 0 -D 1
+
+
 ```
 
 #### Options:
