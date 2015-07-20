@@ -39,15 +39,46 @@ Run from terminal
 `python interuptOsc.py`
 
 You should see the default parameters :
-
-
-
+```
+RPI Gpio interrupt OSC
+destination Address: 127.0.0.1
+outputPort: 9999
+InputPin: 23
+gpioBoard: GPIO.BCM
+oscPath: /gpioOSC
+bouncetime: 200
+resistance: GPIO.PUD_DOWN
+trigger: GPIO.FALLING
+Debug: 1
+```
 
 #### Options:
 `python interuptOsc.py --help` return :
+```
+RPI Gpio interrupt OSC
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GPIOBOARD, --gpioBoard GPIOBOARD
+                        gpio Board Mode (0=GPIO.BCM, 1=GPIO.BOARD)
+  -i INPUTPIN, --inputPin INPUTPIN
+                        input Pin
+  -d DESTINATION, --destination DESTINATION
+                        destination ip address
+  -p OUTPUTPORT, --outputPort OUTPUTPORT
+                        Output Port
+  -o OSCPATH, --oscPath OSCPATH
+                        Osc path
+  -b BOUNCETIME, --bouncetime BOUNCETIME
+                        (de)bouncetime
+  -r RESISTANCE, --resistance RESISTANCE
+                        pull_up_down resistance (0=off, 1=pullUp, 2=pullDown)
+  -t TRIGGER, --trigger TRIGGER
+                        trigger mode (0=FALLING, 1=RISING, 2=BOTH)
+  -D DEBUG, --Debug DEBUG
+                        Debug mode on
 
-
+```
 
 ### todo
 
@@ -76,19 +107,3 @@ You should see the default parameters :
 
 
 [http://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/](http://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/)
-
-
-
-
- GPIO 23 set up as inputs
- GPIO place en pull down,  sert a etre brancher entre gnd et input
- GPIO pull_up_down=GPIO.PUD_UP pour input et ground
- GPIO pull_up_down=GPIO.PUD_DOWN pour input et voltage
-GPIO.setup(args.inputPin, GPIO.IN, pull_up_down=str(resistanceType))
-
-GPIO.add_event_detect() sert a attacher une fonction a un evenement
-la fonction roule dans un thread separe
-a voir si le plus logique est GPIO.FALLING ou GPIO.RISING
-la difference entre les deux c'est de passer de 1 a 0 ou de 0 a 1
-
-GPIO.add_event_detect(args.inputPin, triggerType, callback=my_callback, bouncetime=args.bouncetime)
