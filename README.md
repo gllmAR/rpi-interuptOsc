@@ -1,8 +1,9 @@
 # rpi-interuptOsc
 ####raspberry pi GPIO interrupt to OSC in python  
 
-OSC callback attached to a interrupt detection (ex:button press) on a GPIO input from raspberry pi
-(test Submodule)
+OSC callback attached to a interrupt detection on a GPIO input from raspberry pi
+(ex:button press to OSC)
+
 
 ### Installation
 
